@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 guests = {}
 def read_guestlist(file_name):
   text_file = open(file_name,'r')
