@@ -16,3 +16,5 @@ Provided is a guest list of names and their ages that are within the file guest_
    - The variable n is set to yield at the end of the while loop. This is so that we can maintain a single yield statement. So that whether or  not input is given via send(), the name variable yielded.
 
 The for loop prints the first 10 names from the guest_list, and then prints the name given through send(), and then the remaining names on guest_list
+
+A generator expression is defined that uses the guests dictionary to retrieve a generator of names of guest who are 21 and over. Note that the data fed through send() earlier is included in the dictionary.
