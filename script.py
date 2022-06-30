@@ -2,6 +2,7 @@
 
 
 guests = {}
+
 def read_guestlist(file_name):
   text_file = open(file_name,'r')
   #twe define n so that it is not undefined when the whilw loop runs
@@ -38,3 +39,27 @@ guest_21_and_over = (name for name in guests if guests[name] >= 21)
 
 for name in guest_21_and_over:
     print(name)
+
+#Assign meals to each table and the seats at the table
+def table_x():
+    for i in range(1,6):
+        yield('Beef', "Table X", "Seat " +str(i))
+
+def table_y():
+    for i in range(1, 6):
+        yield('Chicken', "Table Y", "Seat " +str(i))
+
+def table_z():
+    for i in range(1, 6):
+        yield('Fish', "Table  Z", "Seat " +str(i))
+
+#Assign a table and seat numer with meal selection to each guest
+def assign_to_guest(guestlist, generator):
+    for name in guestlist:
+        yield(name, next(generator))
+
+assign_table = assign_to_guest(guests, table_x())
+
+
+print(next(assign_table))
+print(next(assign_table))
