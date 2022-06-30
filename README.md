@@ -18,3 +18,8 @@ Provided is a guest list of names and their ages that are within the file guest_
 The for loop prints the first 10 names from the guest_list, and then prints the name given through send(), and then the remaining names on guest_list
 
 A generator expression is defined that uses the guests dictionary to retrieve a generator of names of guest who are 21 and over. Note that the data fed through send() earlier is included in the dictionary.
+
+We assume that our events will have 3 tables with five seats each. Three generator functions are created to represent each table. Each generator yields a tuple of ('food name', 'Table table label', 'Seat number')
+
+Finally, we want to assign a table and seat number to each guest. To achieve this, we pipeline generators-- a new generator we create will take as input any of the generators we created earlier that yielded the food/seat number. This new generator will also take in as input the guests dictionary.
+This generator function will yield a tuple of the guest name and the next value from the inputed generator 
